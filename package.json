@@ -1,0 +1,35 @@
+{
+  "name": "react-final",
+  "version": "1.0.0",
+  "description": "this is react project",
+  "scripts": {
+    "start":"parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vidhathri30/NamasteReact2.git"
+  },
+  "keywords": [
+    "react",
+    "git"
+  ],
+  "author": "vidhathri",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vidhathri30/NamasteReact2/issues"
+  },
+  "homepage": "https://github.com/vidhathri30/NamasteReact2#readme",
+  "devDependencies": {
+    "parcel": "^2.12.0",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "browsersList":[
+    "last 2 versions"
+  ]
+}
