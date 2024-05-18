@@ -44,3 +44,8 @@ padding:10px;
     flex-wrap: wrap;
     
 }
+.top-restaurants{
+    margin:20px ;
+    
+    cursor:pointer;
+}
