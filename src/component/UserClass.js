@@ -1,4 +1,5 @@
 import React from "react";
+import {GIT_URL} from "../utils/constants";
 class UserClass extends React.Component{
     constructor(props){
         super(props);
@@ -14,7 +15,7 @@ class UserClass extends React.Component{
     }
    async componentDidMount(){
     console.log("componentdid mount");
-        const data = await fetch("https://api.github.com/users/vidhathri30");
+        const data = await fetch(GIT_URL);
         const json=await data.json();
         console.log(json);
         this.setState({
@@ -36,10 +37,14 @@ class UserClass extends React.Component{
         const{name,location,avatar_url}=this.state.userinfo;
         return(
            
-            <div className="user">
-             <img src={avatar_url}></img>   
-            <h2>Name:{name}</h2>
+            <div className="user    items-center">
+                <div className="flex justify-center p-4 m-4">
+             <img  className="  size-[250px] rounded-[250px] justify-center items-center" src={avatar_url}></img>  
+             </div> 
+             <div className="text-center font-bold text-xl">
+            <h2 text-center>Name:{name}</h2>
             <h3>location:{location}</h3>
+            </div>
             </div>
         )
     }
