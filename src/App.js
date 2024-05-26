@@ -7,15 +7,34 @@ import About from "./component/About.js";
 import Contact from "./component/Contact.js";
 import Error from "./component/Error.js";
 import RestaurantMenu from "./component/RestaurantMenu.js";
+import UserContext from "./utils/UserContext.js";
+import { useContext,useState,useEffect } from "react";
+import appStore from "./utils/appStore.js";
+import { Provider } from "react-redux";
 //import Grocery from "./component/Grocery.js";
 const Grocery = lazy(()=> import("./component/Grocery.js"));
 const AppLayout = () => {
+    const[userName,setuserName]=useState();
+    useEffect(()=>{
+        const data={
+            name:"Vidhathri"
+        }
+        setuserName(data.name);
+    })
    
     return (
+        <Provider store={appStore} >
+        <UserContext.Provider value={{
+            LoggedInUser:userName,setuserName
+        }}>
+            
+        
         <div className="app">
             <Header/>
             <Outlet/>
         </div>
+        </UserContext.Provider>
+        </Provider>
         )
     }
         const approuter=createBrowserRouter([

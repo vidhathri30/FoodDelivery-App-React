@@ -1,10 +1,11 @@
 
 import RestoCard,{withPromotedLabel} from "./RestoCard";
 //import resList from "../utils/mockdata";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Body=()=>{
     const [ListOfRestaurants,setListOfRestaurants]=useState([]);
@@ -23,7 +24,8 @@ const Body=()=>{
 
     }
     //conditional rendering
-   
+   const {setuserName}=useContext(UserContext);
+   const {LoggedInUser}=useContext(UserContext);
     const OnlineStatus=useOnlineStatus();
     const RestaurantCardPromotes=withPromotedLabel(RestoCard);
     if(OnlineStatus===false) 
@@ -32,7 +34,7 @@ const Body=()=>{
             <div className="body">
                 <div className="upper-body flex">
                     <div className="search m-4 p-4">
-                        <input type="text" className="search-box border-solid  border-black text-bold" value={searchText} onChange={(e)=>{
+                        <input type="text" className="search-box border-solid text-bold border border-black" value={searchText} onChange={(e)=>{
                             setsearchText(e.target.value);
                         }}/>
                       
@@ -51,6 +53,7 @@ const Body=()=>{
                     const filtereddata= ListOfRestaurants.filter((res)=>res.info.avgRating >4.1);
                      setListOfFilterdRestaurants(filtereddata);
                 }}>Top Listed Restaurants</button></div>
+               
                 </div>
                 <div className="res-container flex flex-wrap">
                   {

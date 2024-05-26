@@ -7,6 +7,7 @@ const useRestaurantMenu =(resId)=> {
             fetchmenu();
     
         },[]);
+        
     
     const fetchmenu= async ()=>{
         const data=await fetch(MENU_API_URL+resId+"&catalog_qa=undefined&isMenuUx4=true&submitAction=ENTER");
@@ -15,6 +16,7 @@ const useRestaurantMenu =(resId)=> {
         console.log(json);
         
     };
+    
     return resInfo;
 }
 
