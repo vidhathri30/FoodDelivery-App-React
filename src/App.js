@@ -11,6 +11,7 @@ import UserContext from "./utils/UserContext.js";
 import { useContext,useState,useEffect } from "react";
 import appStore from "./utils/appStore.js";
 import { Provider } from "react-redux";
+import Cart from "./component/Cart.js";
 //import Grocery from "./component/Grocery.js";
 const Grocery = lazy(()=> import("./component/Grocery.js"));
 const AppLayout = () => {
@@ -57,6 +58,10 @@ const AppLayout = () => {
                 {
                     path:"/restaurant/:resId",
                     element:<RestaurantMenu/>
+                },
+                {
+                    path:"/cart",
+                    element:<Cart/>
                 },
                 {
                     path:"/grocery",

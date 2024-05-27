@@ -1,7 +1,15 @@
 import { useState } from "react";
-const RestaurantCategory=()=>
+import { useDispatch, UseDispatch } from "react-redux";
+import { addItem } from "../utils/cartSlice";
 
+const RestaurantCategory=(items)=>
 {
+    const dispatch=useDispatch();
+const handleitem=()=>{
+    dispatch(addItem(items));
+    console.log
+    9 
+}
     
      return(<div>
         <div className="m-auto h-[160px] w-[600px] bg-pink-300  shadow-2xl ">
@@ -24,7 +32,7 @@ const RestaurantCategory=()=>
                 
             </div>
             
-            
+            <span><button className="bg-black absolute text-white" onClick={()=>handleitem("Pizza")}>ADD+</button></span>
                 <div><img className=" w-[200px] h-[110px] " src="https://c.ndtvimg.com/2023-08/2bvn452g_masala-bhaat-or-masala-rice_625x300_31_August_23.jpg?im=FeatureCrop,algorithm=dnn,width=650,height=400"/>
                 </div>
             
@@ -47,7 +55,9 @@ const RestaurantCategory=()=>
                 <span>  Veg Noodles - Rs 250</span>
                 <span> Fried Rice - Rs 200</span>
                 
-            </div><div><img className="h-[110px] w-[200px]" src="https://img.freepik.com/free-psd/pictou-county-pizza-isolated-transparent-background_191095-32844.jpg?size=626&ext=jpg"/></div></div>
+            </div><div>
+            <span><button className="bg-black absolute text-white" onClick={()=>handleitem("Biriyani")}>ADD+</button></span>
+                <img className="h-[110px] w-[200px]" src="https://img.freepik.com/free-psd/pictou-county-pizza-isolated-transparent-background_191095-32844.jpg?size=626&ext=jpg"/></div></div>
         </div><br></br>
         <div className="m-auto h-[160px] w-[600px] bg-pink-300  mb-3 shadow-2xl ">
         <div className="flex justify-between">
@@ -66,7 +76,9 @@ const RestaurantCategory=()=>
                 <span> Caramel Custard  - Rs 250</span>
                 <span> Icecream(vanilla,mango,pista) - Rs 200</span>
                 
-            </div><div><img className="h-[100px] w-[200px] " src="https://c.ndtvimg.com/2023-08/2bvn452g_masala-bhaat-or-masala-rice_625x300_31_August_23.jpg?im=FeatureCrop,algorithm=dnn,width=650,height=400"/></div></div>
+            </div><div>
+            <span><button className="bg-black absolute text-white" onClick={()=>handleitem("Roti curry")}>ADD+</button></span>
+                <img className="h-[100px] w-[200px] " src="https://c.ndtvimg.com/2023-08/2bvn452g_masala-bhaat-or-masala-rice_625x300_31_August_23.jpg?im=FeatureCrop,algorithm=dnn,width=650,height=400"/></div></div>
         </div>
         
      </div>
