@@ -11,9 +11,9 @@ import { useSelector, UseSelector } from "react-redux";
   const data=useContext(UserContext);
   const cartItems=useSelector((store)=>store.cart.items);
     return (
-        <div className="flex justify-between bg-pink-100 shadow-lg m-2" >
+        <div className="flex justify-between shadow-lg m-2 bg-pink-100" >
           <div className="logo-container">
-            <img className="w-28 h-30" src= {LOGO_URL}/>
+            <img className="w-28 h-30 " src= {LOGO_URL}/>
           </div>
           <div className="flex items-center">
             <ul className="flex ">

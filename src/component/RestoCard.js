@@ -1,6 +1,7 @@
 import { CDN_URL } from "../utils/constants";
 const RestoCard=(props)=>{
     const{resData}= props;
+    console.log(resData);
     const {cloudinaryImageId,name,cuisines,avgRating}=resData?.info;
     const {deliveryTime}=resData?.info.sla;
     return ( <div className="res-card m-4 p-4 w-[250px] bg-pink-100 rounded-xl hover:bg-pink-300 cursor-pointer shadow-xl">

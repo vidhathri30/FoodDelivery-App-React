@@ -30,7 +30,7 @@ const Body=()=>{
     const RestaurantCardPromotes=withPromotedLabel(RestoCard);
     if(OnlineStatus===false) 
     return <h1><center>OOPS!! Looks like you are offline</center></h1>
-        return ListOfRestaurants.length===0?<Shimmer/>:(
+        return ListOfRestaurants.length==0?<Shimmer/>:(
             <div className="body">
                 <div className="upper-body flex">
                     <div className="search m-4 p-4">
